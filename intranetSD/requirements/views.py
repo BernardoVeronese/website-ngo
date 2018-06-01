@@ -2,14 +2,23 @@ from django.http import HttpResponse
 from django.template import loader
 
 # Create your views here.
-def requirement():
-    template = loader.get_template('requirements.html')
-    return HttpResponse(template.render())
+def requirement(request):
+    template = loader.get_template('requirement.html')
+    context = {
 
-def fin():
+    }
+    return HttpResponse(template.render(context, request))
+
+def fin(request):
     template = loader.get_template('financeiro.html')
-    return HttpResponse(template.render())
+    context = {
 
-def mkt():
+    }
+    return HttpResponse(template.render(context, request))
+
+def mkt(request):
     template = loader.get_template('marketing.html')
-    return HttpResponse(template.render())
+    context = {
+
+    }
+    return HttpResponse(template.render(context, request))

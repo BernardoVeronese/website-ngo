@@ -1,30 +1,27 @@
 <!DOCTYPE HTML>
-<!--
-	Theory by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+
 <html>
+{% load static %}
 	<head>
-		<title>Generic - Theory by TEMPLATED</title>
+		<title>SD - Requerimentos</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="static/main.css" />
+		<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
 	</head>
 	<body class="subpage">
 
-		<!-- Header
+		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="index.html" class="logo">Theory</a>
+					<a href="index.html" class="logo">Centro Educacional Santos Dumont</a>
 					<nav id="nav">
-						<a href="index.html">Home</a>
-						<a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a>
+						<a href="requirement.html">Requerimentos</a>
+						<!--<a href="generic.html">Generic</a>
+						<a href="elements.html">Elements</a> -->
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
-			</header> -->
+			</header>
 
 		<!-- Three -->
 			<section id="three" class="wrapper">
@@ -33,59 +30,97 @@
 						<h2> Requerimento Financeiro </h2>
 						<p> Requisições de verba para eventos e aquisições. </p>
 					</header>
-                </div>
-                <h3>Formulário</h3>
-                    <form method="post" action="#">
-                        <div class="row uniform">
-                            <div class="6u 12u$(xsmall)">
-                                <input type="text" name="Nome" id="name" value="" placeholder="Name" />
-                            </div>
-                            <div class="6u$ 12u$(xsmall)">
-                                <input type="email" name="Email" id="email" value="" placeholder="Email" />
-                            </div>
+                    <div class="12u$ 24u$(medium)">
+                        <h3>Instruções</h3>
+                        <ul>
+                            <li> Realizar o preenchimento do formulário abaixo.</li>
+                            <li> Após envio, o departamento Financeiro realizará a leitura da requisição, e enviará um feedback ao e-mail dado no formulário.</li>
+                            <li> Caso o feedback seja positivo, haverá a combinação dos termos de como o dinheiro será entregue, e possíveis orientações em relação a nota fiscal, etc</li>
+                            <li> Caso seja negativo, haverá as justificativas de por que foi recusado o pedido.</li>
+                            Faça um esforço para pedir com pelo menos 5 dias úteis de antecedência.
+                        </ul>
+                    </div>
+                    <div class="12u 24u$(medium)">
+                        <h3>Formulário</h3>
+                            <form method="post" action="#">
+                                <div class="row uniform">
+                                    <div class="6u 12u$(xsmall)">
+                                        <input type="text" name="Nome" id="name" value="" placeholder="Name" />
+                                    </div>
+                                    <div class="6u$ 12u$(xsmall)">
+                                        <input type="email" name="Email" id="email" value="" placeholder="Email" />
+                                    </div>
+                                <!-- Break -->
+                                    <div class="6u 12u$(xsmall)">
+                                        <div class="select-wrapper">
+                                            <select name="category" id="category1">
+                                                <option value="">-Departamento-</option>
+                                                <option value="1">Gestão</option>
+                                                <option value="1">RH CASDvest</option>
+                                                <option value="1">RH Casdinho</option>
+                                                <option value="1">Ensino CASDVest</option>
+                                                <option value="1">Ensino Casdinho</option>
+                                                <option value="1">Desenvolvimento CASDVest</option>
+                                                <option value="1">Marketing</option>
+                                                <option value="1">Financeiro</option>
+                                                <option value="1">Captação de Recursos</option>
+                                                <option value="1">Executivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                <!-- Break -->
+                                    <div class="6u$ 12u$(xsmall)">
+                                        <div class="select-wrapper">
+                                            <select name="category" id="category2">
+                                                <option value="">-Categoria do Gasto-</option>
+                                                <option value="1">Eventos com alunos</option>
+                                                <option value="1">Eventos com voluntários</option>
+                                                <option value="1">Aquisições</option>
+                                                <option value="1">Outros</option>
+                                            </select>
+                                        </div>
+                                    </div>
                             <!-- Break -->
-                            <div class="12u$">
-                                <div class="select-wrapper">
-                                    <select name="category" id="category">
-                                        <option value="">-Categoria do Gasto</option>
-                                        <option value="1">Eventos com alunos</option>
-                                        <option value="1">Eventos com voluntários</option>
-                                        <option value="1">Aquisições</option>
-                                        <option value="1">Outros</option>
-                                    </select>
+                                    <div class="3u 12u$(small)">
+                                        <input type="radio" id="very-priority-low" name="priority" checked>
+                                        <label for="priority-low">R$ 0 - 100</label>
+                                    </div>
+                                    <div class="3u 12u$(small)">
+                                        <input type="radio" id="priority-low" name="priority">
+                                        <label for="priority-low">R$ 100 - 250</label>
+                                    </div>
+                                    <div class="3u 12u$(small)">
+                                        <input type="radio" id="priority-normal" name="priority">
+                                        <label for="priority-normal"> R$ 250 - 500</label>
+                                    </div>
+                                    <div class="3u$ 12u$(small)">
+                                        <input type="radio" id="priority-high" name="priority">
+                                        <label for="priority-high">R$ 500 +</label>
+                                    </div>
+                            <!-- Break -->
+                                    <div class="6u 12u$(small)">
+                                        <input type="date" id="data" name="data" checked>
+                                        <label for="data">Data de entrega</label>
+                                    </div>
+                                    <div class="6u$ 12u$(small)">
+                                        <input type="checkbox" id="human" name="human" checked>
+                                        <label for="human">I am a human and not a robot</label>
+                                    </div>
+                            <!-- Break -->
+                                    <div class="12u$">
+                                        <textarea name="message" id="message" placeholder="Detalhe um pouco mais o orçamento e o objetivo da verba." rows="6"></textarea>
+                                    </div>
+                            <!-- Break -->
+                                    <div class="12u$">
+                                        <ul class="actions">
+                                            <li><input type="submit" value="Enviar" /></li>
+                                            <li><input type="reset" value="Refazer" class="alt" /></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Break -->
-                            <div class="4u 12u$(small)">
-                                <input type="radio" id="priority-low" name="priority" checked>
-                                <label for="priority-low">R$ 0 - 200</label>
-                            </div>
-                            <div class="4u 12u$(small)">
-                                <input type="radio" id="priority-normal" name="priority">
-                                <label for="priority-normal"> R$ 200 - 500</label>
-                            </div>
-                            <div class="4u$ 12u$(small)">
-                                <input type="radio" id="priority-high" name="priority">
-                                <label for="priority-high">R$ 500 +</label>
-                            </div>
-                            <!-- Break -->
-                            <div class="6u$ 12u$(small)">
-                                <input type="checkbox" id="human" name="human" checked>
-                                <label for="human">I am a human and not a robot</label>
-                            </div>
-                            <!-- Break -->
-                            <div class="12u$">
-                                <textarea name="message" id="message" placeholder="Detalhe um pouco mais o orçamento e o objetivo do evento" rows="6"></textarea>
-                            </div>
-                            <!-- Break -->
-                            <div class="12u$">
-                                <ul class="actions">
-                                    <li><input type="submit" value="Enviar" /></li>
-                                    <li><input type="reset" value="Refazer" class="alt" /></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
+                            </form>
+                    </div>
+                </div>
 			</section>
 
 		<!-- Footer -->
@@ -107,10 +142,10 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/skel.min.js' %}"></script>
+			<script src="{% static 'util.js' %}"></script>
+			<script src="{% static 'main.js' %}"></script>
 
 	</body>
 </html>
