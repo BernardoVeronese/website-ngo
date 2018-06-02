@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class RequirementsConfig(AppConfig):
-    name = 'requirements'
+class ToolsConfig(AppConfig):
+    name = 'tools'

@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'jquery',
     'bootstrap3',
     'schedule',
+    'tools.apps.ToolsConfig',
     'requirements.apps.RequirementsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
