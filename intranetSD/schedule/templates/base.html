@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+
+
+
+<html>
+{% load staticfiles %}
+{% load i18n static %}
+{% load bootstrap3 %}
+{% load static %}
+    <head>
+        <title> SD - Reserva de Sala</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
+        <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.css' %}" type="text/css" media="screen">
+        <!--<script type="text/javascript" src="{% static 'schedule.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'schedule.css' %}" type="text/css" media="screen">-->
+        <link rel="stylesheet" href="{% static 'jquery-ui/jquery-ui.theme.css' %}" type="text/css" media="screen">
+        {% block extra_head %}
+        {% endblock %}
+    </head>
+
+    <body class="subpage">
+
+        <header id="header">
+            <div class="inner">
+                <a href="index.html" class="logo">Centro Educacional Santos Dumont</a>
+                <nav id="nav">
+                    <a href=requirement> Requerimentos</a>
+                    <!--<a href="generic.html">Generic</a>
+				    <a href="elements.html">Elements</a> -->
+                </nav>
+                <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+            </div>
+        </header>
+
+        <section id="three" class="wrapper">
+            <div class="inner">
+                <header class="align-center">
+                    <h2> Reserva da Salinha </h2>
+                    <p> Reserve com antecedência a salinha para realizar a sua reunião. </p>
+                </header>
+                <div id="body">
+                    {% if messages %}
+                        <ul id="messages">
+                        {% for message in messages %}
+                            <li id="message_{{ forloop.counter }}"><a href="#" onclick="$('#message_{{ forloop.counter }}').fadeOut(); return false;"><small>{% trans "clear" %}</small></a> {{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% block body %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div id="footer">{% block footer %}{% endblock %}</div>
+        </section>
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/skel.min.js' %}"></script>
+        <script src="{% static 'js/util.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'jquery/dist/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
+
+    </body>
+</html>

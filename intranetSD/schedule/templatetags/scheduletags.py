@@ -12,9 +12,9 @@ from django.utils.safestring import mark_safe
 from django.utils.six.moves.builtins import range
 from django.utils.six.moves.urllib.parse import urlencode
 
-from schedule.models import Calendar
-from schedule.periods import weekday_abbrs, weekday_names
-from schedule.settings import (
+from ..models.calendars import Calendar
+from ..periods import weekday_abbrs, weekday_names
+from ..settings import (
     CHECK_CALENDAR_PERM_FUNC, CHECK_EVENT_PERM_FUNC,
     SCHEDULER_PREVNEXT_LIMIT_SECONDS,
 )

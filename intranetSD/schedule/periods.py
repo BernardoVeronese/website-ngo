@@ -13,8 +13,8 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.six.moves.builtins import range
 from django.utils.translation import ugettext
 
-from schedule.models import Occurrence
-from schedule.settings import SHOW_CANCELLED_OCCURRENCES
+from .models.events import Occurrence
+from .settings import SHOW_CANCELLED_OCCURRENCES
 
 weekday_names = []
 weekday_abbrs = []

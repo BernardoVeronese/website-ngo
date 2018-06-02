@@ -1,10 +1,10 @@
 from django.conf.urls import url
 from django.views.generic.list import ListView
 
-from schedule.feeds import CalendarICalendar, UpcomingEventsFeed
-from schedule.models import Calendar
-from schedule.periods import Day, Month, Week, Year
-from schedule.views import (
+from .feeds import CalendarICalendar, UpcomingEventsFeed
+from .models.calendars import Calendar
+from .periods import Day, Month, Week, Year
+from .views import (
     CalendarByPeriodsView, CalendarView, CancelOccurrenceView, CreateEventView,
     CreateOccurrenceView, DeleteEventView, EditEventView, EditOccurrenceView,
     EventView, FullCalendarView, OccurrencePreview, OccurrenceView,

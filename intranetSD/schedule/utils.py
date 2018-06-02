@@ -5,7 +5,7 @@ from django.conf import settings
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.utils import timezone
 
-from schedule.settings import (
+from .settings import (
     CALENDAR_VIEW_PERM, CHECK_CALENDAR_PERM_FUNC, CHECK_EVENT_PERM_FUNC,
     CHECK_OCCURRENCE_PERM_FUNC,
 )
@@ -28,7 +28,7 @@ class EventListManager(object):
         the most recent occurrence after the date ``after`` from any of the
         events in ``self.events``
         """
-        from schedule.models import Occurrence
+        from .models.events import Occurrence
 
         if after is None:
             after = timezone.now()
@@ -104,13 +104,13 @@ def get_kwarg_or_param(request, kwargs, key):
 
 
 def get_occurrence(request, **kwargs):
-    from schedule.models import Occurrence
+    from .models.events import Occurrence
     occurrence_id = get_kwarg_or_param(request, kwargs, 'occurrence_id')
     return Occurrence.objects.filter(pk=occurrence_id).first() if occurrence_id else None
 
 
 def get_event(occurrence, request, **kwargs):
-    from schedule.models import Event
+    from .models.events import Event
     if occurrence:
         event = occurrence.event
     else:
@@ -120,7 +120,7 @@ def get_event(occurrence, request, **kwargs):
 
 
 def get_calendar(event, request, **kwargs):
-    from schedule.models import Calendar
+    from .models.calendars import Calendar
     calendar = None
     if event:
         calendar = event.calendar

@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from schedule.models import Event, Occurrence
-from schedule.widgets import ColorInput
+from .models.events import Event, Occurrence
+from .widgets import ColorInput
 
 
 class SpanForm(forms.ModelForm):

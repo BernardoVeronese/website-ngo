@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'djangobower',
+    'jquery',
+    'bootstrap3',
     'schedule',
     'requirements.apps.RequirementsConfig',
     'django.contrib.admin',
@@ -123,3 +124,4 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'C:/Users/luizf/intranetsd/intranetSD/static/'
