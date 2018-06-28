@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.core.mail import send_mail
+from django.views.decorators.csrf import csrf_exempt
 from .forms import Fin_form
 
 # Create your views here.
