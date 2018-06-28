@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'schedule',
     'tools.apps.ToolsConfig',
-    'newspage.apps.NewspageConfig',
+    'ourteam.apps.OurteamConfig'
     'requirements.apps.RequirementsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
