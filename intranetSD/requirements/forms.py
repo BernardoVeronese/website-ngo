@@ -27,7 +27,7 @@ class Fin_form(forms.Form):
         #model = Req_fin
         name = forms.CharField(max_length=50)
         email = forms.EmailField(max_length=50)
-        departamento = forms.CharField(max_length=10, choices=DEPARTAMENTOS)
+        departamento = forms.ChoiceField(choices=DEPARTAMENTOS)
         #categoria = forms.CharField(max_length=50, choices=CATEGORIA)
         #data = forms.DateField(_("Date"), default=datetime.date.today)
         mensagem = forms.CharField(widget=forms.Textarea)
