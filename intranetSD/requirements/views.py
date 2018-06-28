@@ -3,9 +3,9 @@ from django.template import loader
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 from .forms import Fin_form
+from .forms import Mkt_form
 
 # Create your views here.
-@csrf_exempt
 def requirement(request):
     template = loader.get_template('./requirements/requirement.html')
     context = {
@@ -20,11 +20,12 @@ def fin(request):
     if request.method == 'POST':
         form = Fin_form(request.POST)
         if form.is_valid():
-            departamento = Fin_form.Meta.name
-            subject = ['Requisicao Financeira SD: Departamento de'+departamento]
-            mensagem = Fin_form.Meta.mensagem
-            nome = Fin_form.Meta.nome
-            email = Fin_form.Meta.email
+            departamento = form.data['departamento']
+            subject = 'Requisição Financeira SD: Departamento de '+departamento
+            mensagem = form.data['mensagem']
+            nome = form.data['nome']
+            email = form.data['email']
+            email = [email]
 
             send_mail(subject, mensagem, 'bernardopveronese@gmail.com',email)
             return HttpResponse(template.render())
@@ -32,29 +33,25 @@ def fin(request):
     else:
         form = Fin_form()
         return HttpResponse(template.render())
+
 @csrf_exempt
 def mkt(request):
+
     # if post request came
+    template = loader.get_template('./requirements/marketing.html')
     if request.method == 'POST':
-        # getting values from post
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
+        form = Mkt_form(request.POST)
+        if form.is_valid():
+            departamento = form.data['departamento']
+            subject = 'Requisição ao MKT: Departamento de ' + departamento
+            mensagem = form.data['mensagem']
+            nome = form.data['nome']
+            email = form.data['email']
+            email = [email]
 
-        # adding the values in a context variable
-        context = {
-            'name': name,
-            'email': email,
-            'phone': phone
-        }
+            send_mail(subject, mensagem, 'bernardopveronese@gmail.com', email)
+            return HttpResponse(template.render())
 
-        # getting our showdata template
-        template = loader.get_template('./requirements/marketing.html')
-
-        # returing the template
-        return HttpResponse(template.render(context, request))
     else:
-        # if post request is not true
-        # returing the form template
-        template = loader.get_template('index.html')
+        form = Fin_form()
         return HttpResponse(template.render())
