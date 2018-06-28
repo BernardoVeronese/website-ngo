@@ -20,5 +20,6 @@ urlpatterns = [
     path('tools/', include('tools.urls')),
     path('requirements/', include('requirements.urls')),
     path('admin/', admin.site.urls),
-    path('roomsschedule/', include('schedule.urls'))
+    path('roomsschedule/', include('schedule.urls')),
+path('newspage/', include('newspage.urls'))
 ]
