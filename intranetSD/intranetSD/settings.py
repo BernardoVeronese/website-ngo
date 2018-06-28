@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'schedule',
     'tools.apps.ToolsConfig',
     'ourteam.apps.OurteamConfig',
+    'home.apps.HomeConfig',
     'requirements.apps.RequirementsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
