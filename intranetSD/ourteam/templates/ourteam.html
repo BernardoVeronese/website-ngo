@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+
+<html>
+{% load static %}
+	<head>
+		<title>SD - Equipe administrativa</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="../" class="logo">Centro Educacional Santos Dumont</a>
+					<nav id="nav">
+						<a href="../requirements">Requerimentos</a>
+						<a href="../tools.html"> Ferramentas de Comunicação</a>
+						<a href="../roomsschedule">Reserva de Salinha</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Three -->
+			<section id="three" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2> Organograma e equipe administrativa </h2>
+						<p> Segue a imagem que ilustra o atual organograma do Centro Educacional Santos Dumont. </p>
+					</header>
+					<div class="flex flex-1">
+						<article>
+							<div class="image fit">
+								<img src="{% static 'images/organograma.png' %}" alt="org" />
+							</div>
+							<header>
+								<h3>Organograma do Santos Dumont</h3>
+							</header>
+							<p>    (...)
+							</p>
+						</article>
+					</div>
+					<div class="flex flex-3">
+						<article>
+							<div class="image fit">
+								<img src="{% static 'images/trello.png' %}" alt="FIN" />
+							</div>
+							<header>
+								<h3>Departamentos Externos</h3>
+							</header>
+							<p>     (...)
+							</p>
+						</article>
+						<article>
+							<div class="image fit">
+								<img src="{% static 'images/casdvest.png' %}" alt="FIN" />
+							</div>
+							<header>
+								<h3>Departamentos CASDvest</h3>
+							</header>
+							<p>     (...)
+							</p>
+						</article>
+						<article>
+							<div class="image fit">
+								<img src="{% static 'images/casdinho.png' %}" alt="FIN" />
+							</div>
+							<header>
+								<h3>Departamentos Casdinho</h3>
+							</header>
+							<p>     (...)
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Site interno ao Centro Educacional Santos Dumont. Design: <a href="https://templated.co">TEMPLATED</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/skel.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
