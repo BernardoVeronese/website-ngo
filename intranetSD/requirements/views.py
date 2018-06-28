@@ -20,8 +20,8 @@ def fin(request):
     if request.method == 'POST':
         form = Fin_form(request.POST)
         if form.is_valid():
-            departamento = form.cleaned_data['departamento']
-            subject = ['Requisicao Financeira SD: Departamento de'+departamento]
+           # departamento = form.cleaned_data["departamento"]
+            subject = ['Requisicao Financeira SD']
             mensagem = form.cleaned_data['mensagem']
             nome = form.cleaned_data['nome']
             email = form.cleaned_data['email']
