@@ -20,11 +20,11 @@ def fin(request):
     if request.method == 'POST':
         form = Fin_form(request.POST)
         if form.is_valid():
-           # departamento = form.cleaned_data["departamento"]
-            subject = ['Requisicao Financeira SD']
-            mensagem = form.cleaned_data['mensagem']
-            nome = form.cleaned_data['nome']
-            email = form.cleaned_data['email']
+            departamento = Fin_form.Meta.name
+            subject = ['Requisicao Financeira SD: Departamento de'+departamento]
+            mensagem = Fin_form.Meta.mensagem
+            nome = Fin_form.Meta.nome
+            email = Fin_form.Meta.email
 
             send_mail(subject, mensagem, 'bernardopveronese@gmail.com',email)
             return HttpResponse(template.render())
