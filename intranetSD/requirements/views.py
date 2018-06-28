@@ -1,11 +1,9 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.core.mail import send_mail
-from django.views.decorators.csrf import csrf_exempt
 from .forms import Fin_form
 
 # Create your views here.
-@csrf_exempt
 def requirement(request):
     template = loader.get_template('./requirements/requirement.html')
     context = {
@@ -20,11 +18,11 @@ def fin(request):
     if request.method == 'POST':
         form = Fin_form(request.POST)
         if form.is_valid():
-            departamento = Fin_form.Meta.name
+            departamento = form.data['departamento']
             subject = ['Requisicao Financeira SD: Departamento de'+departamento]
-            mensagem = Fin_form.Meta.mensagem
-            nome = Fin_form.Meta.nome
-            email = Fin_form.Meta.email
+            mensagem = form.data['mensagem']
+            nome = form.data['nome']
+            email = form.data['email']
 
             send_mail(subject, mensagem, 'bernardopveronese@gmail.com',email)
             return HttpResponse(template.render())
