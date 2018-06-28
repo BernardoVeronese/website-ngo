@@ -4,13 +4,14 @@ from django.core.mail import send_mail
 from .forms import Fin_form
 
 # Create your views here.
+@csrf_exempt
 def requirement(request):
     template = loader.get_template('./requirements/requirement.html')
     context = {
 
     }
     return HttpResponse(template.render(context, request))
-
+@csrf_exempt
 def fin(request):
 
     # if post request came
@@ -30,7 +31,7 @@ def fin(request):
     else:
         form = Fin_form()
         return HttpResponse(template.render())
-
+@csrf_exempt
 def mkt(request):
     # if post request came
     if request.method == 'POST':
